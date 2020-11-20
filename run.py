@@ -60,5 +60,24 @@ def delete_credentials(credentials):
     '''
     credentials.delete_credentials
 
+def find_credentials(first_name):
+    '''
+    function to find credentials from credentials_list
+    '''
+    return Credentials.find_by_first_name(first_name)
 
+def check_credentials_exists(first_name):
+    '''
+    function to check for existing credential
+    '''
+    return Credentials.credentials_exist(first_name)
+
+def display_credentials(credentials):
+    '''
+    function to display all the existing credentials from the credentials_list
+    '''
+    return Credentials.display_credentials()
+
+
+    
 
