@@ -1,6 +1,6 @@
-import unittest #importing th unittest module
+import unittest #importing the unittest module
 from  user import User #importing the User class
-from  credentials import Credentials
+from  credentials import Credentials #importing the Credentials class
 
 class TestUser(unittest.TestCase):
 
@@ -57,7 +57,7 @@ class TestUser(unittest.TestCase):
         test case to test if the application can delete a user.
         '''
        
-        self.new_user.save_user() # checking the availability of a users for deleting
+        self.new_user.save_user() # checking the availability of a user for deleting
         test_user = User('Erastus','Ruiru','mutwech','1234')
         test_user.save_user()
        
@@ -91,17 +91,18 @@ class TestUser(unittest.TestCase):
 
         self.assertTrue(user_exists)    
 
-    def test_display_users(self):
+    def test_display_user(self):
         '''
         Method that returns a list af all users saved.
         '''
 
-        self.assertEqual(User.dislpay_user(),User.user_list)
+        self.assertEqual(User.display_user(),User.user_list)
+        
 
 
     class TestCredentials(unittest.TestCase):
         '''
-        Test class that defines test cases for the users class behaviours.
+        Test class that defines test cases for the credentials class behaviours.
 
         Args:
             unittest.TestCase: TestCase class that helps in creating test cases.
@@ -111,7 +112,7 @@ class TestUser(unittest.TestCase):
             '''
             setUp method to run each test cases.
             '''
-            self.new_credentials = Credentials('Erastus','Ruiru','Facebook','mutwech','5678') #create contact object
+            self.new_credentials = Credentials('Erastus','Ruiru','Facebook','mutwech','5678') #create credentials object
 
 
         def test_init(self):
@@ -126,8 +127,72 @@ class TestUser(unittest.TestCase):
             self.assertEqual(self.new_credentials.password,'5678')
 
 
-    
+        def test_save(self):
+            '''
+            test case to test if the objects are save to the credentials list
+            '''
 
+            self.new_credentials.save_credentials()
+            self.assertEqual(len(Credentials.credentials_list),1)
+
+        def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Credentials.credentials_list=[]
+
+        def test_save_multiple_credentials(self):
+            '''
+            test_save_multiple_credentials is a method to save multiple credentials
+            '''
+
+            self.new_credentials.save_credentials()
+            test_credentials = Credentials('Erastus','Ruiru','Facebook','mutwech','5678') # new credentials
+            test_credentials.save_credentials()
+            self.assertEqual(len(Credentials.credentials_list),2)
+        
+        def test_delete_credentials(self):
+            '''
+            test_delete is a method that delete's a credential from the credentials list
+            '''
+
+            self.new_credentials.save_credentials()
+            test_credentials = Credentials('Erastus','Ruiru','Facebook','mutwech','5678') #new credentials
+            test_credentials.save_credentials()
+
+            self.new_credentials.delete_credentials() #delete credentials from credentials list
+            self.assertEqual(len(Credentials.credentials_list),1)
+        
+        def find_credentials(self):
+            '''
+            find_credentials is a method that you can search a credential by using credentails account name
+            '''
+            
+            self.new_credentials.save_credentials()
+            test_credentials = Credentials('Erastus','Ruiru','Facebook','mutwech','5678') #new credentials
+            test_credentials.save_credentials()
+
+            found_credentials = Credentials.find_by_first_name('Erastus')
+            self.assertEqual(found_credentials.second_name,test_credentials.second_name) 
+
+        def test_credentials_exists(self):
+            '''
+            credentials_exists is method that you can check the existence of a credential in the credentials list
+            '''
+
+            self.new_credentials.save_credentials()
+            test_credentials = Credentials('Erastus','Ruiru','Facebook','mutwech','5678') #new credentials
+            test_credentials.save_credentials()
+
+            credentials_exists = Credentials.credentials_exist('Erastus')
+            self.assertTrue(credentials_exists)   
+
+        def test_display_credentials(self):
+            '''
+            display_credentials is a method that you can display all cretials available
+            '''
+
+            self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)              
 
 if __name__ == "__main__":
     unittest.main()
