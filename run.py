@@ -150,6 +150,7 @@ while True:
                         print('\n')
 
     elif short_code == 'ex':
+            print('\n')
             print("Thank you for your interest in our application...")
             break
     else:
@@ -186,12 +187,14 @@ while True:
                 
             elif create == "yes":
                 print("Press any key as we generate your password !")
+                print('\n')
                 password = input()
                     
                 def random_password(string_length):
-                    digits = string.digits
-                    return ''.join(random.choice(digits) for p in range(string_length))
+                    numbers = string.digits
+                    return ''.join(random.choice(numbers) for p in range(string_length))
 
+                print('\n')
                 print(f"your {account} password is:", random_password(6))
 
             save_credentials(create_credentials(f_name,l_name,username,account, 'password')) #create and save new credential
@@ -217,6 +220,7 @@ while True:
 
 
         elif short_code == 'rp':
+                print('\n')
                 print( "Which account do you want to autogenerate the password for? ")
                 account = input('account')
 
@@ -229,6 +233,7 @@ while True:
                 
 
         elif short_code == 'fc':
+            print('\n')
             print("Enter the first name you want to search for..")
 
             search_first_name =input()
@@ -246,16 +251,19 @@ while True:
 
 
         elif short_code =='del':
+             print('\n')
              print("Input the user first name of the account you prefer to delete?")
              account = input()
 
              credential = find_credentials(account)
              Credentials.credentials_list.remove(credential)
 
-             print(f"{account} account for user {username} has successfully been deleted.")
+             print('\n')
+             print(f"{account}  by the username {username} has successfully been deleted.")
 
 
         elif short_code == 'ex':
+            print('\n')
             print("Thank you for your interest in our application...")
             break
         else:
