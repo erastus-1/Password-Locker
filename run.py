@@ -174,7 +174,7 @@ while True:
 
             if create == "no":
                 print("Create your password.")
-                credentialspassword = input()
+                # credentialspassword = input()
                 getpass.getpass()
 
                 save_credentials(create_credentials(f_name,l_name,username,account, 'password')) #create and save new credential
@@ -192,12 +192,12 @@ while True:
                print('\n')
              
             for credentials in display_credentials(Credentials):
-                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {username} the password of your credential is {credentialspassword}")
+                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {username} the password of your credential is {credentials.password}")
                 print('\n')
 
             else:
                 print('\n')
-                print('We dont seem to find any saved credentials')
+                print('We dont seem to find any saved credentials account by that name!')
                 print('\n')
 
         elif short_code == 'rp':
@@ -211,7 +211,7 @@ while True:
                 print(f"your {account} password is:", random_password(10))
 
         elif short_code == 'fc':
-            print("Enter the account name you want to search for..")
+            print("Enter the first name you want to search for..")
 
             search_first_name =input()
             if  check_credentials_exists(search_first_name):
@@ -219,7 +219,26 @@ while True:
                 print(f"{search_credentials.account} {search_credentials.first_name}")
                 print('-'*20)
 
-                print(f"credentials password is {search_credentials.credentialspassword}")
+                print(f"{account} password is {search_credentials.password}")
+
+            else:
+                        print('\n')
+                        print('We dont seem to find any saved credentials account by that name!')
+                        print('\n')
+
+        elif short_code =='del':
+             print("which account do you want to delete?")
+             credentials = input()
+
+             credentials = find_credentials(credentials)
+             delete_credentials(credentials)
+
+             print(f"Credential of {account} has been successfully deleted.")
+
+             print('\n')
+             print('We dont seem to find any saved credentials account by that name!')
+             print('\n')
+
 
 
         elif short_code == 'ex':
