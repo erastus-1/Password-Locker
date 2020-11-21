@@ -179,7 +179,7 @@ while True:
 
                 save_credentials(create_credentials(f_name,l_name,username,account, 'password')) #create and save new credential
                 print('\n')
-                print(f"Credential account for {f_name}, {l_name}, {username}, {account}  has successfully been created and saved.")
+                print(f"Credential account for {f_name}, {l_name}, {username}, for account {account}  has successfully been created and saved.")
                 print ('\n')
                 
              # elif create == "yes":
@@ -188,11 +188,11 @@ while True:
         elif short_code == 'dc':
 
             if display_credentials(Credentials):
-               print("Here is a list of all credentials")
+               print("Here is a list of all credentials and their passwords")
                print('\n')
              
             for credentials in display_credentials(Credentials):
-                print(f"{credentials.first_name} {credentials.second_name} for {account} account and {credentials.username} username")
+                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {credentials.username} the password is {credentials.password}")
                 print('\n')
 
             else:
