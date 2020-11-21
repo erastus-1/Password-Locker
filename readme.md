@@ -1,6 +1,6 @@
-## PASSWORD-LOCKER
+## **PASSWORD-LOCKER**
 
-#### Author
+#### **Author**
 
 *Ruiru, Erastus*
 
@@ -18,13 +18,13 @@ iv) View various account credentials and their passwords in the application.
 v) Delete a credentials account that's no longer needed in the application.
 
 
-#### Technologies Used
+#### **Technologies Used**
 
 Python 3.9
 
 Git
 
-#### Features
+#### **Features**
 
 New user can create his or her new account
 
@@ -40,7 +40,7 @@ Search credentials saved
 
 exit feature using exit
 
-### Setup Installation
+### **Setup Installation**
 
 1.You can use this command (git clone to clone *https://github.com/erastus-1/Password-Locker* the project to your machine if you have git .
 
@@ -50,11 +50,12 @@ exit feature using exit
 
 4.Run ./run.py to launch the program.
 
-#### Known Bugs
+#### **Known Bugs**
 
 There are no known bugs at the moment but more tests are currently being run.
 
-Contact Details
+### **Contact Details**
+
 Want to contribute? Kindly reach out to me via email: *erastuskariuki15@gmail.com*
 
 License
