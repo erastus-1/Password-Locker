@@ -80,11 +80,11 @@ def display_credentials(credentials):
     '''
     return Credentials.display_credentials()
 
-def generate_password(user):
+def generate_password(credentials):
     """
     Function to generate random password for user
     """
-    return user.generate_random_password()
+    return credentials.generate_random_password()
 
 def main():
     print('\n')
