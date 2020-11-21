@@ -192,7 +192,7 @@ while True:
                print('\n')
              
             for credentials in display_credentials(Credentials):
-                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {credentials.username} the password is {credentials.password}")
+                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {credentials.username} the password of your credential {credentialspassword}")
                 print('\n')
 
             else:
