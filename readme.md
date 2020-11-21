@@ -56,7 +56,9 @@ There are no known bugs at the moment but more tests are currently being run.
 
 ### **Contact Details**
 
-Want to contribute? Kindly reach out to me via email: *erastuskariuki15@gmail.com*
+**Want to contribute?** 
+
+Kindly reach out to me via email: *erastuskariuki15@gmail.com*
 
 License
 MIT
