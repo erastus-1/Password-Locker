@@ -230,8 +230,6 @@ while True:
 
                 print(f"your {account} password is:", random_password(6))
 
-                
-
         elif short_code == 'fc':
             print('\n')
             print("Enter the first name you want to search for..")
