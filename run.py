@@ -192,7 +192,7 @@ while True:
                print('\n')
              
             for credentials in display_credentials(Credentials):
-                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {credentials.username} the password of your credential {credentialspassword}")
+                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {username} the password of your credential is {credentialspassword}")
                 print('\n')
 
             else:
@@ -209,6 +209,17 @@ while True:
                     return ''.join(random.choice(letters) for p in range(string_length))
 
                 print(f"your {account} password is:", random_password(10))
+
+        elif short_code == 'fc':
+            print("Enter the account name you want to search for..")
+
+            search_first_name =input()
+            if  check_credentials_exists(search_first_name):
+                search_credentials = find_credentials(search_first_name)
+                print(f"{search_credentials.account} {search_credentials.first_name}")
+                print('-'*20)
+
+                print(f"credentials password is {search_credentials.credentialspassword}")
 
 
         elif short_code == 'ex':
