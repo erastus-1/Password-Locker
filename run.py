@@ -3,7 +3,7 @@
 from user import User
 from credentials import Credentials
 import random
-import getpass
+
 
 def create_user(fname,lname,username,password):
     '''
@@ -117,7 +117,6 @@ while True:
         if create == "no":
             print("Create your password.")
             userpassword = input()
-            getpass.getpass()
 
             save_user(create_user(f_name,l_name,username, 'password')) #create and savenew user.
             print ('\n')
@@ -137,9 +136,6 @@ while True:
                         print('\n')
                         print('We dont seem to find any saved users')
                         print('\n')
-
-    elif short_code == 'ex':
-         print("Thank you for your interest in our application...")
 
     elif short_code == 'ex':
             print("Thank you for your interest in our application...")
@@ -173,7 +169,7 @@ while True:
 
             if create == "no":
                 print("Create your password.")
-                getpass.getpass()
+                password = input()
 
                 save_credentials(create_credentials(f_name,l_name,username,account, 'password')) #create and save new credential
                 print('\n')
@@ -191,12 +187,12 @@ while True:
                print('\n')
              
             for credentials in display_credentials(Credentials):
-                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {username} the password of your credential is {credentials.password}")
+                print(f"{credentials.first_name} {credentials.second_name} for {account} account as {username} the password of your credential is {password}")
                 print('\n')
 
             else:
                 print('\n')
-                print('We dont seem to find any saved credentials account by that name! check our input')
+                print('We dont seem to find any saved credentials account by that name! check your input')
                 print('\n')
 
 
@@ -220,26 +216,23 @@ while True:
                 print(f"{search_credentials.account} {search_credentials.first_name}")
                 print('-'*20)
 
-                print(f"{account} password is {search_credentials.password}")
+                print(f"{account} password is {password}")
 
             else:
-                        print('\n')
-                        print('We dont seem to find any saved credentials account by that name! check your input')
-                        print('\n')
+                 print('\n')
+                 print('We dont seem to find any saved credentials account by that name! check your input')
+                 print('\n')
 
 
         elif short_code =='del':
-             print("which account do you want to delete?")
+             print("Input the user first name of the account do you prefer to delete?")
              account = input()
 
              credential = find_credentials(account)
              Credentials.credentials_list.remove(credential)
 
-             print(f"Credential of {account} has been successfully deleted.")
+             print(f"Credential of account with the first name {account} has successfully been deleted.")
 
-             print('\n')
-             print('We dont seem to find any saved credentials account by that name! check your input')
-             print('\n')
 
         elif short_code == 'ex':
             print("Thank you for your interest in our application...")
