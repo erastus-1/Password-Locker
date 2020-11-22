@@ -227,8 +227,9 @@ def main():
 
             print("Create your password.")
             password = getpass.getpass()
-
-            print(f"You have created a password locker account")
+            
+            print('\n')
+            print(f"You have successfully created a password locker account")
               
 
             while True:
@@ -294,7 +295,7 @@ def main():
 
                   elif short_code == 'fc':
                              print('\n')
-                             print("Enter the first name you want to search for..")
+                             print("Enter the first name of the acount you want to search for..")
 
                              search_first_name =input()
                              if  check_credentials_exists(search_first_name):
