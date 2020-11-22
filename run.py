@@ -144,7 +144,6 @@ def main():
                               print("Create your password.")
                               password = input()
 
-                              import pdb; pdb.set_trace()
                               print(f"Credential account for {f_name}, {l_name}, user name as {username}, for {account} account a password of {password} has successfully been created and saved.")
                               print ('\n')
  
