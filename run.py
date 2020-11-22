@@ -294,9 +294,10 @@ def main():
                             account = input('account ')
 
                             def random_password(string_length):
-                                letters = string.ascii_letters
-                                return ''.join(random.choice(letters) for p in range(string_length))
-
+                                numbers = string.digits
+                                return ''.join(random.choice(numbers) for p in range(string_length))
+                            
+                            print('\n')
                             print(f"your {account} password is:", random_password(6))
 
                   elif short_code == 'fc':
