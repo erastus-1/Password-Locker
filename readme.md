@@ -4,7 +4,8 @@
 
 *Ruiru, Erastus*
 
-Description
+### **Description**
+
 This software allows the user to create a password locker account with his/her details, a login username and password. The user will also be able to: 
 
 i) Store already existing account credentials.
@@ -52,7 +53,13 @@ exit feature using exit
 
 #### **Known Bugs**
 
-There are no known bugs at the moment but more tests are currently being run.
+1) Cannot save both the user and credentials after you exit the application.
+
+2) Any user can login without creating a password loker account.
+
+3) Cant be able to authenticate.
+
+4) All this bugs are being implemented.
 
 ### **Contact Details**
 
