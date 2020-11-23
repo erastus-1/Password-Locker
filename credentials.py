@@ -1,3 +1,5 @@
+import pyperclip
+
 class Credentials:
     '''
     Class that generates new instances of credentials.
@@ -62,4 +64,12 @@ class Credentials:
         display_credentials is a method that dispalys all the available credential accounts
         '''
         return cls.credentials_list
+
+    @classmethod
+    def copy_password(cls,credentials):
+        '''
+        copy_password is a method that enables a user to copy and paste in the application
+        '''
+        credentials_found = credentials.find_by_first_name(credentials)
+        pyperclip.copy(credentials_found.password)
             

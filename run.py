@@ -4,6 +4,7 @@ from user import User
 from credentials import Credentials
 import random, string
 import getpass
+import pyperclip
 
 
 def create_user(fname,lname,username,password):
@@ -86,6 +87,12 @@ def generate_password(credentials):
     Function to generate random password for user
     """
     return credentials.generate_random_password()
+
+def copy_password(credentials):
+    """
+    function to copy password to the clipboard
+    """
+    return credentials.password,pyperclip.paste()
 
 def main():
     print('\n')
@@ -180,7 +187,9 @@ def main():
                                    letters = string.ascii_letters
                                    return ''.join(random.choice(letters) for p in range(string_length))
 
-                                print(f"your {account} password is:", random_password(6))
+                                print(random_password(int(input("How many characters in your password ?"))))
+                                
+                                # print(f"your {account} password is:", random_password(input))
 
                       elif short_code == 'fc':
                                 print('\n')
@@ -336,11 +345,16 @@ def main():
                              print("Thank you for your interest in our application...")
                              break
             
-
-            else:
-                 print('\n')
-                 print("I really didn't get that. Please use the short codes provided")
-
+                  else:
+                        print('\n')
+                        print("I really didn't get that. Please use the shorts codes provided")
+                        print('\n')
+            
+    else:
+         print('\n')
+         print("I really didn't get that. Please use the choices provided")
+         print('\n')
+         
 
 
 if __name__ == "__main__":
